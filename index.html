@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Form by Landon Snodgrass</title>
+
+    <!-- Meta Info -->
+    <meta charset="UTF-8">
+    <meta name="description" content="A dyanmic form project built by Landon Snodgrass where you can dynamically add or remove form elements.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Portfolio">
+    <meta name="author" content="Landon Snodgrass">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/080ed17134.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="jumbotron mb-0">
+        <h1 class="display-4">Dynamic form</h1>
+        <p class="lead">This is a form that you can add and remove controls from and it will dynamically update. Although this is solely a frontend project (no server to be found), this could be adapted to be used with a backend as that's how it was originally created.
+            You can read more about it in the "Story Time" section.</p>
+        <p class="small text-right">A resume booster by <a href="http://landonsnodgrass.com">Landon Snodgrass.</a></p>
+    </div>
+    <div class="dynamic-form loading">
+        <div class="container md-card py-3">
+            <p class="lead text-dark">The dynamic form</p>
+            <div class="options d-flex flex-md-row">
+                <div class='inner'>
+                    <div class="cellinner">
+                        <label for="input-1" class="sr-only">Text Input</label>
+                        <input type="text" placeholder="First Input" id="input-1" />
+                    </div>
+                    <div class="cellinner">
+                        <label for="input-1" class="sr-only">Select Input</label>
+                        <select id="input-2">
+                            <option value="" selected disabled>Select An Option</option>
+                            <option value="option 1">Option 1</option>
+                            <option value="option 2">Option 2</option>
+                            <option value="option 3">Option 3</option>
+                            <option value="option 4">Option 4</option>
+                        </select>
+                    </div>
+                    <div class="cellinner">
+                        <label for="input-3" class="sr-only">Datepicker Input</label>
+                        <input class="datepicker" placeholder="Date" id="input-3">
+                    </div>
+                    <div class="cellinner">
+                        <label for="input-4" class="sr-only">Text Input</label>
+                        <input type="text" placeholder="Text Input" id="input-4" />
+                    </div>
+                </div>
+                <div class="search-container">
+                    <a class="fas fa-search search-button"></a>
+                </div>
+            </div>
+            <!-- END options -->
+        </div>
+        <!-- END container -->
+    </div>
+    <!-- END dynamic-form -->
+    <div class="add-inputs text-center">
+        <div class="container px-3">
+            <div class="content">
+                <p class="lead text-dark">Controls for adding and removing inputs to simulate a dynamic environment...or something
+                </p>
+                <hr>
+                <div class="btn-container">
+                    <a class="btn btn-primary mt-2" id="addText">Add a text input</a>
+                    <a class="btn btn-primary mt-2" id="addSelect">Add a select input</a>
+                    <a class="btn btn-primary mt-2" id="addCalendar">Add a jQuery calendar input</a>
+                    <a class="btn btn-danger mt-2" id="removeLast">Remove the last input</a>
+                </div>
+                <div class="maxInput-container my-3">
+                    <label for="maxInputs">Max inputs per row? <input type="number" id="maxInputs" default="3" /></label>
+                    <a class="btn btn-primary btn-inline" id="updateMaxInputs">Update</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END add-inputs -->
+    <article>
+        <div class="container md-card py-3">
+            <p class="lead">Story time! How this was made.</p>
+            <hr>
+            <p>This was originally a project for work where the client needed a dynamic search form and I thought the solution I came up with was pretty slick.</p>
+            <p>A brief overview of how it works is:</p>
+            <ol>
+                <li>I add all the options into an array</li>
+                <li>I start a loop</li>
+                <li>I start a loop</li>
+                <li>I start a loop....just kidding</li>
+                <li>Just one loop</li>
+                <li>I splice out the first element of the array</li>
+                <li>I do that until the index is greater than the number of max inputs per row</li>
+                <li>The rest of the array are the "advanced options"</li>
+            </ol>
+            <p>I thought that was pretty clever so I decided to build this little page to show if off!</p>
+            <p>If you're super impressed (I know you are), checkout more of my stuff on my <a href="http://landonsnodgrass.com">website.</a></p>
+        </div>
+    </article>
+    <!-- 
+        Scripts: 
+        jQuery
+        jQueryUI
+        BootStrap
+        Chosen.js
+        Custom Javascript
+    -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="plugins/chosen/chosen.jquery.min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>
